@@ -13,7 +13,7 @@ mixtape can extract audio segments from the beginning of files, from the end of 
 So far, has been tested only on macOS High Sierra, with Python 3.6.3
 
 ```
-pyenv virtualenv mixtape
+pyenv virtualenv 3.6.3 mixtape
 pyenv local mixtape
 pip install scipy
 pip install sounddevice
