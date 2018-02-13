@@ -201,7 +201,7 @@ def parse_args():
                                 help="For --slice: Specify length of sections of music to skip (in seconds).")
     parser.add_argument('input', nargs='+',
                         help="Specify the input filename. May be specified multiple times for --transition and --slice.")
-    parser.set_defaults(input=[], output=None, play=False, length=0, skip=0)
+    parser.set_defaults(input=[], output=None, play=False, length=1.0, skip=5.0)
     args = parser.parse_args()
     if (args.length <= 0) or (args.skip <= 0):
         parser.error("Length and skip lengths must be greater than 0")
