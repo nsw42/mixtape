@@ -1,7 +1,7 @@
 import argparse
 from   collections import namedtuple
 import numpy
-import os.path
+import os
 import subprocess
 import sys
 import tempfile
@@ -67,9 +67,10 @@ def play_segments(segments):
     Play the given list of segments, reporting progress to stdout
     :param segments: list of Segment
     """
+    display_size = os.get_terminal_size().columns
     try:
         for segment in segments:
-            print(segment.time, end='\r')
+            print(segment.time.ljust(display_size-1), end='\r')
             sounddevice.play(segment.wav.data, segment.wav.sample_rate)
             sounddevice.wait()
     except KeyboardInterrupt:
